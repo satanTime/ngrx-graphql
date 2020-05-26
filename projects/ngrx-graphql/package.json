@@ -1,0 +1,24 @@
+{
+    "name": "ngrx-graphql",
+    "version": "0.0.0",
+    "description": "Store feature to track tasks via correlation id",
+    "dependencies": {
+        "ngrx-entity-relationship": "^1.2.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:satanTime/ngrx-graphql.git"
+    },
+    "keywords": [
+        "ngrx",
+        "correlationId",
+        "correlation",
+        "id"
+    ],
+    "author": "MG. <m@sudo.eu>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/satanTime/ngrx-graphql/issues"
+    },
+    "homepage": "https://github.com/satanTime/ngrx-graphql#readme"
+}
