@@ -132,7 +132,7 @@ will generate
 }
 ```
 
-## Where to use
+### Usage with HttpClient
 
 You can use it in ngrx effects for example.
 ```typescript
@@ -142,7 +142,7 @@ export class EntityEffects {
     public readonly dataGraph$ = this.actions$.pipe(
         ofType(UserActionTypes.LOAD),
         switchMap(
-            () => this.http.get<{data: {users: unknown}}>('http://localhost:3000/graphql', {
+            () => this.http.get<{data: {users: Array<User>}}>('http://localhost:3000/graphql', {
                 params: {
                     query: toGraphQL('users', selectUser), // <- generates query
                 }
@@ -158,6 +158,33 @@ export class EntityEffects {
     constructor(
         protected readonly actions$: Actions,
         protected readonly http: HttpClient,
+    ) {
+    }
+}
+```
+
+### Usage with Apollo Service
+```typescript
+@Injectable()
+export class EntityEffects {
+    @Effect()
+    public readonly dataGraph$ = this.actions$.pipe(
+        ofType(UserActionTypes.LOAD),
+        switchMap(
+            () => this.apollo.query<{users: Array<User>}>({
+                query: gql`${toGraphQL('users', selectUser)}`, // <- generates query
+            }).pipe(
+                map(response => reduceGraph({ // <- reduces data
+                    data: response.data.users,
+                    selector: selectUser,
+                })),
+            ),
+        ),
+    );
+
+    constructor(
+        protected readonly actions$: Actions,
+        protected readonly apollo: Apollo,
     ) {
     }
 }
