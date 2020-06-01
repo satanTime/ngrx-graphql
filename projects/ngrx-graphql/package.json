@@ -11,9 +11,7 @@
     },
     "keywords": [
         "ngrx",
-        "correlationId",
-        "correlation",
-        "id"
+        "graphql"
     ],
     "author": "MG. <m@sudo.eu>",
     "license": "Apache-2.0",

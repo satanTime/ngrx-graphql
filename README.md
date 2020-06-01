@@ -4,7 +4,7 @@
 [![CircleCI](https://circleci.com/gh/satanTime/ngrx-graphql.svg?style=shield)](https://app.circleci.com/pipelines/github/satanTime/ngrx-graphql)
 [![Coverage Status](https://coveralls.io/repos/github/satanTime/ngrx-graphql/badge.svg?branch=master)](https://coveralls.io/github/satanTime/ngrx-graphql?branch=master)
 
-A helper library for convertion of selectors made [ngrx-entity-relationship](https://www.npmjs.com/package/ngrx-entity-relationship) to a GraphQL query.
+A helper library for convertion of selectors made by [ngrx-entity-relationship](https://www.npmjs.com/package/ngrx-entity-relationship) to a GraphQL query.
 
 ### Supports
 - Angular 6 and `ngrx/store@6`
