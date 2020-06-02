@@ -1,7 +1,7 @@
 {
     "name": "ngrx-graphql",
     "version": "1.0.0",
-    "description": "Store feature to track tasks via correlation id",
+    "description": "Ease of NGRX and GraphQL",
     "dependencies": {
         "ngrx-entity-relationship": "^1.2.1"
     },
