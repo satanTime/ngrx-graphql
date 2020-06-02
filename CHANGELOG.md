@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/satanTime/ngrx-graphql/compare/v1.0.0...v1.0.1) (2020-06-02)
+
+### Bug Fixes
+
+-   proper description ([4745010](https://github.com/satanTime/ngrx-graphql/commit/47450101aa75181a487cd1beaf25b1f372648879))
+
 # 1.0.0 (2020-06-01)
 
 ### Features
