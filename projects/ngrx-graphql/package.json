@@ -1,6 +1,6 @@
 {
     "name": "ngrx-graphql",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Ease of NGRX and GraphQL",
     "dependencies": {
         "ngrx-entity-relationship": "^1.2.1"

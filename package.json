@@ -1,6 +1,6 @@
 {
     "name": "ngrx-graphql",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scripts": {
         "ng": "ng",
         "build": "rm -Rf tmp && rm -Rf dist && ng build && cp LICENSE dist/ngrx-graphql && cp README.md dist/ngrx-graphql",
