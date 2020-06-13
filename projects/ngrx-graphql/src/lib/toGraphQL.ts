@@ -70,6 +70,33 @@ const resolveGraphQL = (
     return query;
 };
 
+function encodeValue(data: any): string | undefined {
+    if (typeof data === 'number') {
+        return JSON.stringify(data);
+    }
+    if (typeof data === 'string') {
+        return JSON.stringify(data);
+    }
+    if (data === null || data === undefined) {
+        return JSON.stringify(null);
+    }
+    if (typeof data === 'function') {
+        return undefined;
+    }
+    if (Array.isArray(data)) {
+        return JSON.stringify(data.map(encodeValue).filter(v => v !== undefined));
+    }
+    const fields: Array<string> = [];
+    for (const key of Object.keys(data)) {
+        const value = encodeValue(data[key]);
+        if (value === undefined) {
+            continue;
+        }
+        fields.push(`${key}:${value}`);
+    }
+    return `{${fields.join(',')}}`;
+}
+
 export function toGraphQL(...queries: Array<string>): string;
 export function toGraphQL(query: string, params: object, selector: ENTITY_SELECTOR): string;
 export function toGraphQL(query: string, selector: ENTITY_SELECTOR): string;
@@ -91,9 +118,21 @@ export function toGraphQL(...queries: Array<any>): string {
     if (typeof params === 'string') {
         stringParams.push(params);
     }
-    if (typeof params === 'object' && params !== null) {
+    if (params && typeof params === 'object') {
         for (const key of Object.keys(params)) {
-            stringParams.push(`${key}:${prefix ? ' ' : ''}${JSON.stringify(params[key])}`);
+            if (key === '$') {
+                continue;
+            }
+            stringParams.push(`${key}:${prefix ? ' ' : ''}${encodeValue(params[key])}`);
+        }
+    }
+    if (params && typeof params === 'object' && params.$ && typeof params.$ === 'object') {
+        const params$ = params.$;
+        for (const key of Object.keys(params$)) {
+            if (typeof params$[key] !== 'string' || params$[key][0] !== '$') {
+                throw new Error(`${key} should be a variable that starts with $ symbol`);
+            }
+            stringParams.push(`${key}:${prefix ? ' ' : ''}${params$[key]}`);
         }
     }
     params = stringParams.length ? `(${stringParams.join(`,${prefix ? ' ' : ''}`)})` : '';

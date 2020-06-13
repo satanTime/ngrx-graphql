@@ -1,5 +1,5 @@
-.env
-dist
-node_modules
-test-reports
+/.env
+/dist
+/node_modules
+/test-reports
 tmp

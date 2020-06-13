@@ -3,7 +3,7 @@
     "version": "1.0.2",
     "description": "Ease of NGRX and GraphQL",
     "dependencies": {
-        "ngrx-entity-relationship": "^1.2.1"
+        "ngrx-entity-relationship": "^1.3.0"
     },
     "repository": {
         "type": "git",
