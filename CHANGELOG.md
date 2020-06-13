@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/satanTime/ngrx-graphql/compare/v1.0.2...v1.1.0) (2020-06-13)
+
+### Features
+
+-   support of query, subscription and mutation ([91ace33](https://github.com/satanTime/ngrx-graphql/commit/91ace33f86c8595f32770c27deb322ba6dc13cbf))
+
 ## [1.0.2](https://github.com/satanTime/ngrx-graphql/compare/v1.0.1...v1.0.2) (2020-06-02)
 
 ### Bug Fixes
