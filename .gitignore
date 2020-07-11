@@ -2,4 +2,4 @@
 /dist
 /node_modules
 /test-reports
-tmp
+/tmp

@@ -11,6 +11,7 @@ A helper library for convertion of selectors made by [ngrx-entity-relationship](
 - Angular 7 and `ngrx/store@7`
 - Angular 8 and `ngrx/store@8`
 - Angular 9 and `ngrx/store@9`
+- Angular 10 and `ngrx/store@10`
 
 ## Installation
 
