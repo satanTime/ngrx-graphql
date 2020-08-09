@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/satanTime/ngrx-graphql/compare/v1.1.0...v1.1.1) (2020-08-09)
+
+### Bug Fixes
+
+-   **deps:** update of ngrx-entity-relationship ([1bc0cf3](https://github.com/satanTime/ngrx-graphql/commit/1bc0cf3a6bb57872bbb38cd974830007fb75cc38))
+
 # [1.1.0](https://github.com/satanTime/ngrx-graphql/compare/v1.0.2...v1.1.0) (2020-06-13)
 
 ### Features
